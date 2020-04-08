@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" type="text/css" th:href="@{/css/style.css}">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <title>Title</title>
+</head>
+<body>
+
+<p th:text="'the date is'+ ${theDate}" />
+<h3>List of customers</h3>
+<table class="table">
+    <tr>
+         <td>Id</td> <td>FirstName</td><td>LastName</td><td>Email</td>
+    </tr>
+    <tr th:each="customer : ${customers}">
+        <td th:text="${customer.getId()}"></td>
+        <td th:text="${customer.getFirstName()}"></td>
+        <td th:text="${customer.getLastName()}"></td>
+        <td th:text="${customer.getEmail()}"></td>
+    </tr>
+</table>
+
+</body>
+</html>
